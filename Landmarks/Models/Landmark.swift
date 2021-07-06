@@ -27,6 +27,11 @@ struct Landmark: Hashable, Codable, Identifiable{
     var image: Image{
         Image(imageName)
     }
+    
+    var featureImage: Image?{
+        isFeatured ? Image(imageName + "_feature") : nil
+    }
+    
     //added nested coordinates property using a nested Coordinates type.
     private var coordinates: Coordinates
     var locationCoordinates: CLLocationCoordinate2D{
